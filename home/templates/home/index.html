@@ -1,0 +1,1471 @@
+
+  {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>AstrellCapitalInvest</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Favicons -->
+ <link href="{% static 'assets/images/favicon.png' %}" rel="icon">
+<link href="{% static 'assets/images/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+<link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/bootstrap-icons.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/aos.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/swiper-bundle.min.css' %}" rel="stylesheet">
+
+<!-- Main CSS File -->
+<link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+<img src="{% static 'assets/images/logo4.png' %}" alt="" class="nav-logo"> 
+
+        <!-- <h1 class="sitename">Astrell</h1> -->
+      </a>
+
+      <style>
+       .nav-logo {
+    width: 170px;              /* Adjust width only */
+    height: auto;              /* Prevent stretching */
+    border-radius: 12px;       /* Rounded corners */
+    object-fit: contain;       /* Keeps quality sharp */
+}
+
+
+      </style>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Market</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Investment</a></li>
+          <li class="dropdown"><a href="#"><span>More</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="#about">Get Started</a>
+
+    </div>
+  </header>
+
+  
+<main class="main">
+  <section id="hero" class="hero section py-1">
+
+  <!-- TradingView Widget -->
+  <div class="tradingview-widget-wrapper mt-3">
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+      {
+        "symbols": [
+          {"proName": "FOREXCOM:SPXUSD", "title": "S&P 500 Index"},
+          {"proName": "FOREXCOM:NSXUSD", "title": "US 100 Cash CFD"},
+          {"proName": "FX_IDC:EURUSD", "title": "EUR to USD"},
+          {"proName": "BITSTAMP:BTCUSD", "title": "Bitcoin"},
+          {"proName": "BITSTAMP:ETHUSD", "title": "Ethereum"}
+        ],
+        "colorTheme": "light",
+        "locale": "en",
+        "largeChartUrl": "",
+        "isTransparent": false,
+        "showSymbolLogo": true,
+        "displayMode": "adaptive"
+      }
+      </script>
+    </div>
+  </div>
+</section>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero section py-5">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8" data-aos="zoom-in" data-aos-delay="200">
+
+          <div class="hero-content text-center">
+
+            <!-- Reward Badge -->
+            <div class="hero-badge mb-3" data-aos="fade-down" data-aos-delay="300">
+              <i class="bi bi-gift-fill gift-icon"></i>
+              <span>Refer & Get Reward</span>
+            </div>
+
+            <!-- Typewriter Hero Title -->
+            <h1 class="hero-title mb-3" data-aos="fade-up" data-aos-delay="400">
+              <span id="typewriter"></span>
+            </h1>
+
+            <!-- Hero Description -->
+            <p class="hero-description mb-4" data-aos="fade-up" data-aos-delay="500">
+              At Astrell Capital Invest, we make digital currency investing simple, secure, and rewarding. Grow your wealth, explore innovative opportunities, and be part of the future of finance.
+            </p>
+
+            <!-- Hero Actions -->
+            <div class="hero-actions mb-4" data-aos="fade-up" data-aos-delay="600">
+              <a href="#about" class="btn-primary">Start Investing Today</a>
+              <a href="#portfolio" class="btn-outline">See Our Success Stories</a>
+            </div>
+
+            <!-- Hero Metrics -->
+           <div class="hero-metrics d-flex justify-content-center flex-wrap" data-aos="fade-up" data-aos-delay="700">
+  
+  <div class="metric-item mx-3 mb-3">
+    <div class="metric-icon">
+      <i class="bi bi-people-fill"></i>
+    </div>
+    <div class="metric-content">
+      <span class="metric-number">1,200+</span>
+      <span class="metric-label">Active Investors</span>
+    </div>
+  </div>
+
+  <div class="metric-item mx-3 mb-3">
+    <div class="metric-icon">
+      <i class="bi bi-cash-stack"></i>
+    </div>
+    <div class="metric-content">
+      <span class="metric-number">$3.5M+</span>
+      <span class="metric-label">Total Payouts</span>
+    </div>
+  </div>
+
+  <div class="metric-item mx-3 mb-3">
+    <div class="metric-icon">
+      <i class="bi bi-currency-bitcoin"></i>
+    </div>
+    <div class="metric-content">
+      <span class="metric-number">15+</span>
+      <span class="metric-label">Coins Supported</span>
+    </div>
+  </div>
+
+</div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- /Hero Section -->
+
+</main>
+
+<style>
+  /* Default for desktop */
+.main {
+    padding-top: 100px; /* spacing for desktop */
+}
+
+/* Mobile / smaller screens */
+@media (max-width: 768px) {
+    .main {
+        padding-top: 58px; /* less spacing on mobile */
+    }
+}
+
+</style>
+
+
+    <!-- About Section -->
+<section id="about" class="about section">
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row align-items-center gy-5">
+
+      <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
+        <div class="image-section">
+          <div class="primary-image">
+            <img src="{% static 'assets/images/hero-img2.jpeg' %}" alt="Corporate office environment" class="img-fluid">
+            <div class="experience-badge">
+              <div class="badge-content">
+                <span class="years">10+</span>
+                <span class="text">Years of Excellence</span>
+              </div>
+            </div>
+          </div>
+          <div class="image-grid">
+            <img src="{% static 'assets/images/hero-img.jpeg' %}" alt="Professional workspace" class="img-fluid grid-img">
+            <img src="{% static 'assets/images/hero-img3.png' %}" alt="Team collaboration" class="img-fluid grid-img">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
+        <div class="content-section">
+          <div class="section-intro">
+            <div class="company-badge">WHO WE ARE</div>
+            <h2>Empowering Your Financial Future with Innovative Crypto Solutions</h2>
+            <p class="intro-text">
+              Astrell Capital Invest is a leading digital currency investment company committed to helping individuals grow their wealth securely and efficiently. We combine technology, transparency, and expertise to create investment opportunities that deliver real value.
+            </p>
+          </div>
+
+          <div class="achievement-list">
+            <div class="achievement-item">
+              <div class="achievement-icon">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+              <div class="achievement-content">
+                <h4>Proven Growth Strategies</h4>
+                <p>We provide tailored investment strategies that maximize returns while minimizing risk for our clients in the fast-paced crypto market.</p>
+              </div>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <div class="achievement-content">
+                <h4>Expert Team</h4>
+                <p>Our team of crypto analysts, financial advisors, and tech specialists ensures your investments are guided by expertise and insight.</p>
+              </div>
+            </div>
+          </div>
+
+         <div class="action-section custom-buttons">
+  <a href="#" class="btn btn-primary">View Certificate</a>
+  <a href="tel:+15552345678" class="btn btn-primary green-btn">
+    +1 (555) 234-5678
+  </a>
+</div>
+
+<!-- BUTTON CERTIFICATE / MESSAGE CALL STYLE  -->
+<style>
+/* Custom CSS to keep buttons side by side */
+.custom-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 10px !important; /* spacing between buttons */
+    flex-wrap: nowrap !important; /* prevent wrapping on mobile */
+}
+
+/* Common button styling */
+.custom-buttons .btn {
+    padding: 0.4rem 0.8rem !important; /* smaller button size */
+    font-size: 0.9rem !important; /* smaller text */
+    border-radius: 12px !important; /* rounded corners */
+    text-align: center;
+    white-space: nowrap; /* prevent text wrapping */
+    transition: opacity 0.8s ease-in-out; /* smooth blinking transition */
+    animation: blink 1.6s infinite alternate; /* smooth blinking */
+}
+
+/* Green button specific styling */
+.green-btn {
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+    color: #fff !important;
+}
+
+/* Blink animation */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+</style>
+
+<!-- BUTTON CERTIFICATE / MESSAGE CALL STYLE END -->
+        </div>
+      </div>
+
+    </div>
+
+    <div class="metrics-section" data-aos="fade-up" data-aos-delay="400">
+      <div class="row text-center">
+        <div class="col-lg-3 col-md-6">
+          <div class="metric-card">
+            <div class="metric-value">480+</div>
+            <div class="metric-label">Successful Investments</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="metric-card">
+            <div class="metric-value">99.8%</div>
+            <div class="metric-label">Investor Satisfaction</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="metric-card">
+            <div class="metric-value">65+</div>
+            <div class="metric-label">Expert Team Members</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="metric-card">
+            <div class="metric-value">24/7</div>
+            <div class="metric-label">Support Assistance</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section><!-- /About Section -->
+<!-- Services Section -->
+<section id="services" class="services section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Services</h2>
+    <p>At Astrell Capital Invest, we provide innovative solutions in cryptocurrency investment, secure trading, and financial growth to help you maximize your digital assets.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="services-grid">
+      <div class="row g-4">
+
+        <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+          <div class="featured-service-card">
+            <div class="service-badge">Most Popular</div>
+            <div class="service-icon-large">
+              <i class="bi bi-currency-bitcoin"></i>
+            </div>
+            <h3>Crypto Portfolio Management</h3>
+            <p>Expertly manage your crypto assets with smart portfolio strategies, designed to maximize returns while minimizing risk.</p>
+            <div class="feature-highlights">
+              <div class="highlight-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>24/7 Market Monitoring</span>
+              </div>
+              <div class="highlight-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Risk Analysis</span>
+              </div>
+              <div class="highlight-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Automated Alerts</span>
+              </div>
+            </div>
+            <a href="service-details.html" class="btn-primary">Get Started Free</a>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="row g-4">
+
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="bi bi-shield-lock-fill"></i>
+                </div>
+                <h4>Secure Trading</h4>
+                <p>Trade cryptocurrencies securely with enterprise-grade security protocols and protection against fraud.</p>
+                <!-- <a href="service-details.html" class="service-link">
+                  <span>Learn More</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a> -->
+              </div>
+            </div>
+
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="250">
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="bi bi-graph-up"></i>
+                </div>
+                <h4>Market Analytics</h4>
+                <p>Stay ahead with real-time crypto market insights, trends, and predictive analytics to make informed decisions.</p>
+                <!-- <a href="service-details.html" class="service-link">
+                  <span>Learn More</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a> -->
+              </div>
+            </div>
+
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="bi bi-people-fill"></i>
+                </div>
+                <h4>Investor Advisory</h4>
+                <p>Personalized guidance for new and experienced investors to help you grow your crypto portfolio safely and efficiently.</p>
+                <!-- <a href="service-details.html" class="service-link">
+                  <span>Learn More</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a> -->
+              </div>
+            </div>
+
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="350">
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="bi bi-cloud-arrow-up-fill"></i>
+                </div>
+                <h4>Blockchain Integration</h4>
+                <p>Integrate blockchain technology into your business or personal projects for secure, transparent, and innovative solutions.</p>
+                <!-- <a href="service-details.html" class="service-link">
+                  <span>Learn More</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a> -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="services-tabs mt-5">
+      <ul class="nav nav-pills justify-content-center mb-5" id="services-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="services-development-tab" data-bs-toggle="pill" data-bs-target="#services-development" type="button" role="tab">Investment Services</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="services-marketing-tab" data-bs-toggle="pill" data-bs-target="#services-marketing" type="button" role="tab">Market Analysis</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="services-support-tab" data-bs-toggle="pill" data-bs-target="#services-support" type="button" role="tab">Support & Guidance</button>
+        </li>
+      </ul>
+
+      <div class="tab-content" id="services-tabs-content">
+
+        <div class="tab-pane fade show active" id="services-development" role="tabpanel">
+          <div class="row g-4">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="tab-service-card">
+                <div class="service-icon">
+                  <i class="bi bi-currency-bitcoin"></i>
+                </div>
+                <h5>Crypto Portfolio</h5>
+                <p>Manage your crypto assets with expert strategies for growth and security.</p>
+                <a href="service-details.html" class="tab-service-link">Get Started</a>
+              </div>
+            </div>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="tab-service-card">
+                <div class="service-icon">
+                  <i class="bi bi-graph-up"></i>
+                </div>
+                <h5>Market Trends</h5>
+                <p>Analyze market movements and gain insights for smarter investment decisions.</p>
+                <a href="" class="tab-service-link">Get Started</a>
+              </div>
+            </div>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="tab-service-card">
+                <div class="service-icon">
+                  <i class="bi bi-shield-lock-fill"></i>
+                </div>
+                <h5>Secure Trading</h5>
+                <p>Trade cryptocurrencies securely with enterprise-grade protection and compliance.</p>
+                <a href="" class="tab-service-link">Get Started</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="services-marketing" role="tabpanel">
+          <div class="row g-4">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="tab-service-card">
+                <div class="service-icon">
+                  <i class="bi bi-bar-chart-line-fill"></i>
+                </div>
+                <h5>Market Analytics</h5>
+                <p>Real-time analytics and reporting to track crypto performance and market opportunities.</p>
+                <a href="service-details.html" class="tab-service-link">Get Started</a>
+              </div>
+            </div>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="tab-service-card">
+                <div class="service-icon">
+                  <i class="bi bi-lightning-charge-fill"></i>
+                </div>
+                <h5>Crypto Signals</h5>
+                <p>Receive expert trading signals to make informed investment decisions quickly.</p>
+                <a href="service-details.html" class="tab-service-link">Get Started</a>
+              </div>
+            </div>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="tab-service-card">
+                <div class="service-icon">
+                  <i class="bi bi-currency-exchange"></i>
+                </div>
+                <h5>Token Insights</h5>
+                <p>Get detailed insights and evaluations of trending crypto tokens and digital assets.</p>
+                <a href="service-details.html" class="tab-service-link">Get Started</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="services-support" role="tabpanel">
+          <div class="row g-4">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="tab-service-card">
+                <div class="service-icon">
+                  <i class="bi bi-headset"></i>
+                </div>
+                <h5>24/7 Support</h5>
+                <p>Round-the-clock assistance for all your crypto investment and platform-related needs.</p>
+                <a href="service-details.html" class="tab-service-link">Get Started</a>
+              </div>
+            </div>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="tab-service-card">
+                <div class="service-icon">
+                  <i class="bi bi-people-fill"></i>
+                </div>
+                <h5>Investor Guidance</h5>
+                <p>Receive expert advice to grow your portfolio safely and make strategic investment decisions.</p>
+                <a href="service-details.html" class="tab-service-link">Get Started</a>
+              </div>
+            </div>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="tab-service-card">
+                <div class="service-icon">
+                  <i class="bi bi-book"></i>
+                </div>
+                <h5>Learning Resources</h5>
+                <p>Access educational content to understand crypto investments, market trends, and strategies.</p>
+                <a href="service-details.html" class="tab-service-link">Get Started</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</section><!-- /Services Section -->
+
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Crypto Market Overview</h2>
+        <p>Stay up-to-date with the latest cryptocurrency prices, trends, and market movements. Explore live data from top digital assets to make informed investment decisions.</p>
+      </div><!-- End Section Title -->
+
+
+     <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/" rel="noopener nofollow" target="_blank"><span class="blue-text">Crypto markets</span></a><span class="trademark"> by TradingView</span></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+  {
+  "defaultColumn": "overview",
+  "screener_type": "crypto_mkt",
+  "displayCurrency": "USD",
+  "colorTheme": "light",
+  "isTransparent": false,
+  "locale": "en",
+  "width": "100%",
+  "height": 550
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+    </section><!-- /Features Section -->
+
+    <!-- Features 2 Section -->
+<section id="features-2" class="features-2 section bg-light">
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="features-list row gy-4">
+
+      <!-- Feature 1 -->
+      <div class="col-md-6">
+        <div class="feature-item shadow-sm p-3 rounded bg-white" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon text-primary mb-3">
+            <i class="bi bi-currency-dollar fs-2"></i>
+          </div>
+          <div class="feature-content">
+            <h4>High ROI Investment Plans</h4>
+            <p>Choose from a variety of investment packages tailored for beginners, professionals, and corporate teams to maximize returns safely.</p>
+            <div class="feature-tags mt-2">
+              <span>Profitable</span>
+              <span>Secure</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="col-md-6">
+        <div class="feature-item shadow-sm p-3 rounded bg-white" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon text-success mb-3">
+            <i class="bi bi-graph-up-arrow fs-2"></i>
+          </div>
+          <div class="feature-content">
+            <h4>Real-Time Performance Tracking</h4>
+            <p>Monitor your investments with our intuitive dashboard that shows profits, returns, and daily accumulation in real time.</p>
+            <div class="feature-tags mt-2">
+              <span>Transparent</span>
+              <span>Trackable</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="col-md-6">
+        <div class="feature-item shadow-sm p-3 rounded bg-white" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-icon text-warning mb-3">
+            <i class="bi bi-people-fill fs-2"></i>
+          </div>
+          <div class="feature-content">
+            <h4>Dedicated Investment Support</h4>
+            <p>Our expert team provides guidance, answers your questions, and ensures you make informed decisions with confidence.</p>
+            <div class="feature-tags mt-2">
+              <span>Professional</span>
+              <span>Reliable</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="col-md-6">
+        <div class="feature-item shadow-sm p-3 rounded bg-white" data-aos="fade-up" data-aos-delay="400">
+          <div class="feature-icon text-danger mb-3">
+            <i class="bi bi-shield-lock fs-2"></i>
+          </div>
+          <div class="feature-content">
+            <h4>Secure & Trusted Platform</h4>
+            <p>We prioritize security and compliance, ensuring your funds are safe while providing a trusted investment experience.</p>
+            <div class="feature-tags mt-2">
+              <span>Safe</span>
+              <span>Reliable</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta-section text-center mt-5" data-aos="fade-up" data-aos-delay="500">
+      <a href="#pricing" class="btn btn-primary me-3">Choose Your Plan</a>
+      <a href="#contact" class="btn btn-outline-secondary">Get In Touch</a>
+    </div>
+
+  </div>
+
+</section><!-- /Features 2 Section -->
+
+
+   <!-- Testimonials Section -->
+<section id="testimonials" class="testimonials section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Testimonials</h2>
+    <p>Hear from our investors about their experience with Astrell Capital Investment</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="testimonials-slider-wrapper">
+      <div class="testimonials-carousel">
+
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="rating">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <blockquote>
+            "Astrell Capital Investment has made crypto investing simple and secure. Their platform is intuitive and provides great insights for all investors."
+          </blockquote>
+          <div class="user-profile">
+            <div class="avatar">
+              <img src="{% static 'assets/images/SarahWilliams.jpeg' %}" alt="User" class="img-fluid">
+            </div>
+            <div class="user-info">
+              <h4>Sarah Williams</h4>
+              <span class="title">Investor</span>
+              <div class="company">Crypto Enthusiast</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card featured" data-aos="zoom-in" data-aos-delay="300">
+          <div class="featured-badge">
+            <i class="bi bi-award-fill"></i>
+            <span>Top Review</span>
+          </div>
+          <div class="rating">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <blockquote>
+            "The analytics and real-time tracking provided by Astrell Capital Investment have significantly improved my investment decisions and portfolio performance."
+          </blockquote>
+          <div class="user-profile">
+            <div class="avatar">
+              <img src="{% static 'assets/images/MichaelChen.jpeg' %}" alt="User" class="img-fluid">
+            </div>
+            <div class="user-info">
+              <h4>Michael Chen</h4>
+              <span class="title">Investor</span>
+              <div class="company">Blockchain Trader</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="400">
+          <div class="rating">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <blockquote>
+            "Astrell Capital Investment offers a reliable and secure platform for both beginners and experienced crypto investors. Their support is excellent."
+          </blockquote>
+          <div class="user-profile">
+            <div class="avatar">
+              <img src="{% static 'assets/images/EmmaRodriguez.jpeg' %}" alt="User" class="img-fluid">
+            </div>
+            <div class="user-info">
+              <h4>Emma Rodriguez</h4>
+              <span class="title">Investor</span>
+              <div class="company">Digital Assets</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</section><!-- /Testimonials Section -->
+
+    <!-- Pricing Section -->
+<section id="pricing" class="pricing section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Investment Packages</h2>
+    <p>Astrell.com 📈🌐 - Choose the package that suits your investment goals</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row gy-4">
+
+      <!-- Package 1: Beginner -->
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="pricing-card" style="box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+          <div class="plan-header">
+            <div class="plan-icon">
+              <i class="bi bi-box"></i>
+            </div>
+            <h3>Beginner</h3>
+            <p>For new investors starting small</p>
+          </div>
+          <div class="plan-pricing">
+            <div class="price">
+              <span class="currency">US$</span>
+              <span class="amount">80 - 500</span>
+              <span class="period">/24 hours</span>
+            </div>
+          </div>
+          <div class="plan-features">
+            <ul>
+              <li><strong>Return:</strong> 10%</li>
+              <li><strong>Profit:</strong> US$ 8 - 50</li>
+              <li><strong>Accumulation:</strong> Daily</li>
+            </ul>
+          </div>
+          <div class="plan-cta">
+            <a href="#" class="btn-plan blinking-btn">Invest Now</a>
+          </div>
+        </div>
+      </div><!-- End Package 1 -->
+
+      <!-- Package 2: Premium (Most Popular) -->
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+        <div class="pricing-card popular" style="box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+          <div class="popular-tag">Most Popular</div>
+          <div class="plan-header">
+            <div class="plan-icon">
+              <i class="bi bi-briefcase"></i>
+            </div>
+            <h3>Premium</h3>
+            <p>Short-term high return investment</p>
+          </div>
+          <div class="plan-pricing">
+            <div class="price">
+              <span class="currency">US$</span>
+              <span class="amount">1,000 - 1,500</span>
+              <span class="period">/3 days</span>
+            </div>
+          </div>
+          <div class="plan-features">
+            <ul>
+              <li><strong>Return:</strong> 15%</li>
+              <li><strong>Profit:</strong> US$ 150 - 225</li>
+              <li><strong>Accumulation:</strong> Daily</li>
+            </ul>
+          </div>
+          <div class="plan-cta">
+            <a href="#" class="btn-plan">Invest Now</a>
+          </div>
+        </div>
+      </div><!-- End Package 2 -->
+
+      <!-- Package 3: Professional Mining Traders -->
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+        <div class="pricing-card" style="box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+          <div class="plan-header">
+            <div class="plan-icon">
+              <i class="bi bi-building"></i>
+            </div>
+            <h3>Professional Mining Traders</h3>
+            <p>For experienced investors seeking higher returns</p>
+          </div>
+          <div class="plan-pricing">
+            <div class="price">
+              <span class="currency">US$</span>
+              <span class="amount">2,500 - 3,100</span>
+              <span class="period">/6 days</span>
+            </div>
+          </div>
+          <div class="plan-features">
+            <ul>
+              <li><strong>Return:</strong> 30%</li>
+              <li><strong>Profit:</strong> US$ 750 - 930</li>
+              <li><strong>Accumulation:</strong> Daily</li>
+            </ul>
+          </div>
+          <div class="plan-cta">
+            <a href="#" class="btn-plan blinking-btn">Invest Now</a>
+          </div>
+        </div>
+      </div><!-- End Package 3 -->
+
+      <!-- Package 4: Professional Team Mining -->
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
+        <div class="pricing-card" style="box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+          <div class="plan-header">
+            <div class="plan-icon">
+              <i class="bi bi-building"></i>
+            </div>
+            <h3>Professional Team Mining</h3>
+            <p>High-capital team investment</p>
+          </div>
+          <div class="plan-pricing">
+            <div class="price">
+              <span class="currency">US$</span>
+              <span class="amount">6,100+</span>
+              <span class="period">/6 days</span>
+            </div>
+          </div>
+          <div class="plan-features">
+            <ul>
+              <li><strong>Return:</strong> 60%</li>
+              <li><strong>Profit:</strong> US$ 3,660 - Unlimited</li>
+              <li><strong>Accumulation:</strong> Daily</li>
+              <li><strong>Investment Limit:</strong> Unlimited</li>
+            </ul>
+          </div>
+          <div class="plan-cta">
+            <a href="#" class="btn-plan blinking-btn">Invest Now</a>
+          </div>
+        </div>
+      </div><!-- End Package 4 -->
+
+      <!-- Christmas Bonus Plan 1 -->
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
+        <div class="pricing-card" style="box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+          <div class="plan-header">
+            <div class="plan-icon">
+              <i class="bi bi-gift"></i>
+            </div>
+            <h3>Christmas Bonus 1</h3>
+            <p>Special seasonal bonus plan</p>
+          </div>
+          <div class="plan-pricing">
+            <div class="price">
+              <span class="currency">US$</span>
+              <span class="amount">1,500 - 5,000</span>
+              <span class="period">/24 hours</span>
+            </div>
+          </div>
+          <div class="plan-features">
+            <ul>
+              <li><strong>Return:</strong> 20%</li>
+              <li><strong>Profit:</strong> Calculated daily</li>
+              <li><strong>Accumulation:</strong> Daily</li>
+            </ul>
+          </div>
+          <div class="plan-cta">
+            <a href="#" class="btn-plan blinking-btn">Invest Now</a>
+          </div>
+        </div>
+      </div><!-- End Christmas Bonus 1 -->
+
+      <!-- Christmas Bonus Plan 2 -->
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="700">
+        <div class="pricing-card" style="box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+          <div class="plan-header">
+            <div class="plan-icon">
+              <i class="bi bi-gift"></i>
+            </div>
+            <h3>Christmas Bonus 2</h3>
+            <p>Special seasonal bonus plan</p>
+          </div>
+          <div class="plan-pricing">
+            <div class="price">
+              <span class="currency">US$</span>
+              <span class="amount">2,300 - 15,000</span>
+              <span class="period">/18 hours</span>
+            </div>
+          </div>
+          <div class="plan-features">
+            <ul>
+              <li><strong>Return:</strong> 40%</li>
+              <li><strong>Profit:</strong> Calculated daily</li>
+              <li><strong>Accumulation:</strong> Daily</li>
+            </ul>
+          </div>
+          <div class="plan-cta">
+            <a href="#" class="btn-plan blinking-btn">Invest Now</a>
+          </div>
+        </div>
+      </div><!-- End Christmas Bonus 2 -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Pricing Section -->
+
+<!-- Custom CSS for blinking buttons -->
+<style>
+@keyframes blink {
+  0% {opacity: 1;}
+  50% {opacity: 0.5;}
+  100% {opacity: 1;}
+}
+
+.blinking-btn {
+  animation: blink 1.2s infinite;
+  background-color: #0d6efd !important;
+  border-color: #0d6efd !important;
+  color: #fff !important;
+}
+</style>
+
+
+<!-- ROI CALCULATOR -->
+ <!-- ROI Calculator Section -->
+<section id="roi-calculator" class="section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>ROI Calculator</h2>
+    <p>Estimate your profit for any Astrell Investment Package</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="roi-card p-4" style="max-width: 600px; margin: auto; box-shadow: 0 8px 25px rgba(0,0,0,0.3); border-radius: 10px;">
+
+      <!-- Error Message -->
+      <div id="roiError" class="alert alert-danger d-none" role="alert"></div>
+
+      <div class="mb-3">
+        <label for="planSelect" class="form-label"><strong>Select Investment Plan</strong></label>
+        <select class="form-select" id="planSelect">
+          <option value="" selected disabled>-- Choose a Plan --</option>
+          <option value="beginner" data-return="10" data-min="80" data-max="500">Beginner (US$ 80 - 500)</option>
+          <option value="premium" data-return="15" data-min="1000" data-max="1500">Premium (US$ 1,000 - 1,500)</option>
+          <option value="professional" data-return="30" data-min="2500" data-max="3100">Professional Mining Traders (US$ 2,500 - 3,100)</option>
+          <option value="team" data-return="60" data-min="6100" data-max="1000000">Professional Team Mining (US$ 6,100+)</option>
+          <option value="bonus1" data-return="20" data-min="1500" data-max="5000">Christmas Bonus 1 (US$ 1,500 - 5,000)</option>
+          <option value="bonus2" data-return="40" data-min="2300" data-max="15000">Christmas Bonus 2 (US$ 2,300 - 15,000)</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="investmentAmount" class="form-label"><strong>Investment Amount (US$)</strong></label>
+        <input type="number" class="form-control" id="investmentAmount" placeholder="Enter amount">
+      </div>
+
+      <div class="d-flex justify-content-between mb-3">
+        <button class="btn btn-primary" id="calculateBtn">Calculate ROI</button>
+        <button class="btn btn-secondary" id="clearBtn">Clear</button>
+      </div>
+
+      <div id="roiResult" class="mt-3 p-3" style="background-color: #f8f9fa; border-radius: 8px; display: none;">
+        <h5>Results:</h5>
+        <p><strong>Return:</strong> <span id="roiReturn"></span>%</p>
+        <p><strong>Profit:</strong> US$ <span id="roiProfit"></span></p>
+        <p><strong>Total Amount:</strong> US$ <span id="roiTotal"></span></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+const roiError = document.getElementById('roiError');
+const roiResult = document.getElementById('roiResult');
+
+document.getElementById('calculateBtn').addEventListener('click', function() {
+  const plan = document.getElementById('planSelect').selectedOptions[0];
+  const investment = parseFloat(document.getElementById('investmentAmount').value);
+  
+  roiError.classList.add('d-none');
+  roiResult.style.display = 'none';
+
+  if (!plan.value) {
+    roiError.textContent = 'Please select an investment plan.';
+    roiError.classList.remove('d-none');
+    return;
+  }
+  if (isNaN(investment)) {
+    roiError.textContent = 'Please enter a valid investment amount.';
+    roiError.classList.remove('d-none');
+    return;
+  }
+
+  const min = parseFloat(plan.getAttribute('data-min'));
+  const max = parseFloat(plan.getAttribute('data-max'));
+  const roiPercent = parseFloat(plan.getAttribute('data-return'));
+
+  if (investment < min || investment > max) {
+    roiError.textContent = `Please enter an amount between US$ ${min.toLocaleString()} and US$ ${max.toLocaleString()}.`;
+    roiError.classList.remove('d-none');
+    return;
+  }
+
+  const profit = (investment * roiPercent / 100).toFixed(2);
+  const total = (investment + parseFloat(profit)).toFixed(2);
+
+  document.getElementById('roiReturn').textContent = roiPercent;
+  document.getElementById('roiProfit').textContent = parseFloat(profit).toLocaleString();
+  document.getElementById('roiTotal').textContent = parseFloat(total).toLocaleString();
+  roiResult.style.display = 'block';
+});
+
+document.getElementById('clearBtn').addEventListener('click', function() {
+  document.getElementById('planSelect').selectedIndex = 0;
+  document.getElementById('investmentAmount').value = '';
+  roiResult.style.display = 'none';
+  roiError.classList.add('d-none');
+});
+</script>
+
+<style>
+#roiResult h5 {
+  margin-bottom: 0.5rem;
+}
+#roi-calculator .btn {
+  min-width: 120px;
+}
+</style>
+
+
+<!-- ROI CALCULATOR END -->
+
+<!-- Faq Section -->
+<section id="faq" class="faq section">
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+
+        <div class="faq-container">
+
+          <!-- FAQ Item 1 -->
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="question-wrapper">
+              <div class="icon-wrapper">
+                <i class="bi bi-patch-question"></i>
+              </div>
+              <div class="content-wrapper">
+                <h3 class="question">How can I invest?</h3>
+                <div class="answer">
+                  <p>Getting started with Astrell Capital Investments is simple. Choose an investment plan that fits your goals, make a deposit, and your investment will start growing immediately according to the plan’s terms.</p>
+                </div>
+              </div>
+            </div>
+          </div><!-- End FAQ Item -->
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+            <div class="question-wrapper">
+              <div class="icon-wrapper">
+                <i class="bi bi-patch-question"></i>
+              </div>
+              <div class="content-wrapper">
+                <h3 class="question">Will I receive my profit after the investment duration?</h3>
+                <div class="answer">
+                  <p>Yes! Once your investment reaches the end of its duration, the profit generated according to your chosen plan will be credited to your account automatically. You can monitor your returns in real-time through your dashboard.</p>
+                </div>
+              </div>
+            </div>
+          </div><!-- End FAQ Item -->
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="question-wrapper">
+              <div class="icon-wrapper">
+                <i class="bi bi-patch-question"></i>
+              </div>
+              <div class="content-wrapper">
+                <h3 class="question">Can I withdraw my funds anytime?</h3>
+                <div class="answer">
+                  <p>Yes, you have full control over your funds. You can withdraw your investment and profits at any time through your account, subject to the terms of the selected investment plan.</p>
+                </div>
+              </div>
+            </div>
+          </div><!-- End FAQ Item -->
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</section><!-- /Faq Section -->
+<!-- Contact Section -->
+<section id="contact" class="contact section py-5 bg-light">
+
+  <!-- Section Title -->
+  <div class="container text-center mb-5" data-aos="fade-up">
+    <h2>Contact Us</h2>
+    <p class="text-muted">Have questions or need assistance? Our Astrell Capital Investment team is ready to help you achieve your investment goals.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row g-4">
+
+      <!-- Contact Info Panel -->
+      <div class="col-lg-5" data-aos="fade-right" data-aos-delay="150">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <h3 class="mb-3">Get in Touch</h3>
+          <p class="text-muted mb-4">Reach out to us with any inquiries, investment questions, or support requests. We're here to guide you every step of the way.</p>
+
+          <div class="mb-3">
+            <h6 class="fw-bold">Office Address</h6>
+            <p class="text-muted mb-2">1247 Central Park West, New York, NY 10024</p>
+          </div>
+
+          <div class="mb-3">
+            <h6 class="fw-bold">Email</h6>
+            <p class="text-muted mb-2"><a href="mailto:info@astrellcapital.com" class="text-decoration-none">info@astrellcapital.com</a></p>
+          </div>
+
+          <div class="mb-3">
+            <h6 class="fw-bold">Phone</h6>
+            <p class="text-muted mb-2">+1 (555) 432-1098</p>
+          </div>
+
+          <div class="mb-3">
+            <h6 class="fw-bold">Business Hours</h6>
+            <p class="text-muted mb-0">Mon-Fri: 8AM - 7PM<br>Weekends: By Appointment</p>
+          </div>
+
+          <div class="mt-4">
+            <h6 class="fw-bold">Follow Us</h6>
+            <div class="d-flex gap-3 mt-2">
+              <a href="#" class="text-primary fs-5"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-info fs-5"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="text-primary fs-5"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="text-danger fs-5"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-lg-7" data-aos="fade-left" data-aos-delay="150">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <h3 class="mb-3">Send Us a Message</h3>
+          <p class="text-muted mb-4">Have questions about our investment packages or ROI plans? Fill out the form below, and our team will respond promptly.</p>
+
+          <form class="php-email-form modern-form">
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+              </div>
+              <div class="col-md-6">
+                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+              </div>
+              <div class="col-md-6">
+                <input type="tel" name="phone" class="form-control" placeholder="Phone Number">
+              </div>
+              <div class="col-md-6">
+                <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+              </div>
+              <div class="col-12">
+                <textarea name="message" class="form-control" rows="5" placeholder="Your message goes here..." required></textarea>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <div class="loading">Sending...</div>
+              <div class="error-message alert alert-danger d-none"></div>
+              <div class="sent-message alert alert-success d-none">Your message has been sent. Thank you!</div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2">
+              <button type="submit" class="btn btn-primary flex-grow-1">
+                Send Message <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+              <button type="reset" class="btn btn-outline-secondary flex-grow-1">Clear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section><!-- /Contact Section -->
+
+  </main>
+<!-- Footer Section -->
+<footer id="footer" class="footer bg-light position-relative py-5">
+
+  <div class="container">
+
+    <!-- Footer Main -->
+    <div class="footer-main mb-5" data-aos="fade-up" data-aos-delay="100">
+      <div class="row gy-4">
+
+        <!-- Brand & Contact Info -->
+        <div class="col-lg-5">
+          <div class="brand-section">
+            <a href="index.html" class="logo d-flex align-items-center mb-3">
+              <span class="sitename fs-4 fw-bold">AstrellCapitalInvest</span>
+            </a>
+            <p class="text-muted mb-4">We provide transparent and profitable investment solutions to help you grow your wealth with confidence and ease.</p>
+
+            <div class="contact-info">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-geo-alt me-2 text-primary"></i>
+                <span>123 Creative Boulevard, Design District, NY 10012</span>
+              </div>
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-telephone me-2 text-success"></i>
+                <span>+1 (555) 987-6543</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <i class="bi bi-envelope me-2 text-warning"></i>
+                <span><a href="mailto:info@astrellcapital.com" class="text-decoration-none">info@astrellcapital.com</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Navigation -->
+        <div class="col-lg-7">
+          <div class="row gy-4">
+
+            <div class="col-6 col-lg-3">
+              <h6 class="fw-bold">About Us</h6>
+              <nav class="footer-nav d-flex flex-column gap-1">
+                <a href="#">Our Story</a>
+                <a href="#">Team</a>
+                <a href="#">Careers</a>
+                <a href="#">Press</a>
+              </nav>
+            </div>
+
+            <div class="col-6 col-lg-3">
+              <h6 class="fw-bold">Investments</h6>
+              <nav class="footer-nav d-flex flex-column gap-1">
+                <a href="#">Beginner Package</a>
+                <a href="#">Premium Package</a>
+                <a href="#">Professional Mining</a>
+                <a href="#">Team Mining</a>
+              </nav>
+            </div>
+
+            <div class="col-6 col-lg-3">
+              <h6 class="fw-bold">Resources</h6>
+              <nav class="footer-nav d-flex flex-column gap-1">
+                <a href="#">Blog</a>
+                <a href="#">FAQs</a>
+                <a href="#">Guides</a>
+                <a href="#">News</a>
+              </nav>
+            </div>
+
+            <div class="col-6 col-lg-3">
+              <h6 class="fw-bold">Connect</h6>
+              <nav class="footer-nav d-flex flex-column gap-1">
+                <a href="#">Contact</a>
+                <a href="#">Start Investing</a>
+                <a href="#">Subscribe</a>
+                <a href="#">Support</a>
+              </nav>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom border-top pt-4" data-aos="fade-up" data-aos-delay="200">
+      <div class="row align-items-center">
+
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+          <p class="mb-0 text-muted">© <span class="sitename">AstrellCapitalInvest</span>. All rights reserved.</p>
+        </div>
+
+        <div class="col-md-6 text-center text-md-end">
+          <a href="#" class="me-3 text-decoration-none text-muted">Privacy Policy</a>
+          <a href="#" class="me-3 text-decoration-none text-muted">Terms of Service</a>
+          <a href="#" class="text-decoration-none text-muted">Cookie Policy</a>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-3 text-muted small">
+        Designed by <a href="https://bootstrapmade.com/" class="text-decoration-none">AstrellCapitalInvest Company </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+  <style>
+    .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    background: #fff8e1; /* light background */
+    padding: 10px 15px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-weight: 600;
+    color: #ff6b6b; /* accent color */
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.hero-badge:hover {
+    transform: scale(1.1); /* slightly enlarge on hover */
+}
+
+.gift-icon {
+    margin-right: 8px;
+    font-size: 1.5rem;
+    color: #ff3b3b;
+    animation: bounce 1.5s infinite;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-8px);
+    }
+    60% {
+        transform: translateY(-4px);
+    }
+}
+
+  </style>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+ <!-- Vendor JS Files -->
+<script data-cfasync="false" src="{% static 'assets/js/email-decode.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/js/validate.js' %}"></script>
+<script src="{% static 'assets/js/aos.js' %}"></script>
+<script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+
+<!-- Main JS File -->
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"68c5ca450bae485a842ff76066d69420","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const text = "Unlock Your Financial Future with Astrell Capital Invest";
+    const target = document.getElementById("typewriter");
+    let index = 0;
+
+    function type() {
+        if (index < text.length) {
+            target.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80); // speed in milliseconds
+        }
+    }
+
+    type();
+});
+</script>
+
+</body>
+
+</html>
