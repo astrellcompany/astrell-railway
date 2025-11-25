@@ -110,18 +110,12 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-DEBUG = os.getenv("DEBUG", "True").lower() == "true"
+DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
-if DEBUG:
-    print("🔵 Using SQLITE3 (Local Development)")
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
-        }
-    }
+# Railway auto-sets this variable
+ON_RAILWAY = os.getenv("RAILWAY_ENVIRONMENT") is not None
 
-else:
+if ON_RAILWAY:
     print("🟢 Using POSTGRESQL (Railway Production)")
     DATABASES = {
         "default": {
@@ -134,6 +128,15 @@ else:
             "OPTIONS": {"sslmode": "require"},
         }
     }
+else:
+    print("🔵 Using SQLITE3 (Local Development)")
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
