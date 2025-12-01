@@ -178,9 +178,9 @@ else:
 RESEND_API_KEY = os.getenv("RESEND_API_KEY")
 
 # Default sender email (Resend requires domain verification)
-DEFAULT_FROM_EMAIL = "support@astrellcapital.com"
+DEFAULT_FROM_EMAIL = "support@astrellcapitalinvest.com"
 DEFAULT_FROM_EMAIL = DEFAULT_FROM_EMAIL
-ADMIN_EMAIL = os.getenv("ADMIN_EMAIL", "support@astrellcapital.com")
+ADMIN_EMAIL = os.getenv("ADMIN_EMAIL", "support@astrellcapitalinvest.com")
 
 
 # ---------------------------------------

@@ -130,6 +130,8 @@ from datetime import datetime
 import logging
 from .forms import UserRegistrationForm, UserProfileForm
 from .models import UserProfile
+from utils.email_utils import send_resend_email
+
 
 
 
@@ -137,7 +139,6 @@ from .models import UserProfile
 logger = logging.getLogger(__name__)
 
 def register(request):
-    # Redirect if already logged in
     if request.user.is_authenticated:
         messages.info(request, "You’re already logged in.")
         return redirect("userprofile:dashboard")
@@ -149,6 +150,7 @@ def register(request):
         profile_form = UserProfileForm(request.POST, request.FILES)
 
         if user_form.is_valid() and profile_form.is_valid():
+
             try:
                 # Create user
                 user = user_form.save(commit=False)
@@ -171,27 +173,33 @@ def register(request):
 
                 profile.save()
 
-                # Send welcome email using HTML template
+                # -----------------------------------------------
+                # ✅ SEND WELCOME EMAIL USING RESEND API
+                # -----------------------------------------------
                 try:
-                    subject = "Welcome to EversteadInvest"
-                    html_content = render_to_string("userprofile/register_mail.html", {
-                        "username": user.username,
-                        "dashboard_url": "https://www.eversteadinvest.com/userprofile/dashboard/"
-                    })
-
-                    msg = EmailMultiAlternatives(
-                        subject=subject,
-                        body=f"Hello {user.username}, your account has been created successfully!",
-                        from_email=settings.DEFAULT_FROM_EMAIL,
-                        to=[user.email],
+                    subject = "Welcome to Astrellcapitalinvest"
+                    html_content = render_to_string(
+                        "userprofile/register_mail.html",
+                        {
+                            "username": user.username,
+                            "dashboard_url": "https://www.astrellcapitalinvest.com/userprofile/dashboard/"
+                        }
                     )
-                    msg.attach_alternative(html_content, "text/html")
-                    msg.send(fail_silently=False)
 
-                    logger.info(f"[EMAIL SENT] Welcome email sent to {user.email}")
+                    # Use your helper function (Resend API)
+                    send_resend_email(
+                        to=user.email,
+                        subject=subject,
+                        html=html_content,
+                    )
+
+                    logger.info(f"[EMAIL SENT] Welcome email sent via Resend to {user.email}")
 
                 except Exception as e:
-                    logger.error(f"[EMAIL ERROR] Failed sending welcome email to {user.email}: {e}", exc_info=True)
+                    logger.error(
+                        f"[EMAIL ERROR] Failed sending welcome email via Resend to {user.email}: {e}",
+                        exc_info=True
+                    )
 
                 django_login(request, user)
                 messages.success(request, "Your Wallet has been created successfully!")
@@ -200,6 +208,7 @@ def register(request):
             except Exception as e:
                 logger.error(f"[REGISTER ERROR] Registration failed: {e}", exc_info=True)
                 messages.error(request, "Something went wrong during registration. Check logs.")
+
         else:
             logger.warning(f"[FORM ERROR] User form: {user_form.errors} | Profile form: {profile_form.errors}")
 
@@ -207,10 +216,105 @@ def register(request):
         user_form = UserRegistrationForm()
         profile_form = UserProfileForm(initial={"referral_bonus": initial_referral})
 
-    return render(request, "userprofile/register.html", {
-        "user_form": user_form,
-        "profile_form": profile_form,
-    })
+    return render(
+        request,
+        "userprofile/register.html",
+        {
+            "user_form": user_form,
+            "profile_form": profile_form,
+        },
+    )
+
+
+
+
+
+
+
+
+# logger = logging.getLogger(__name__)
+
+# def register(request):
+#     # Redirect if already logged in
+#     if request.user.is_authenticated:
+#         messages.info(request, "You’re already logged in.")
+#         return redirect("userprofile:dashboard")
+
+#     initial_referral = request.GET.get("ref", "")
+
+#     if request.method == "POST":
+#         user_form = UserRegistrationForm(request.POST)
+#         profile_form = UserProfileForm(request.POST, request.FILES)
+
+#         if user_form.is_valid() and profile_form.is_valid():
+#             try:
+#                 # Create user
+#                 user = user_form.save(commit=False)
+#                 user.set_password(user_form.cleaned_data["password1"])
+#                 user.save()
+
+#                 logger.info(f"[REGISTER] New user registered: {user.email}")
+
+#                 # Create profile
+#                 profile = profile_form.save(commit=False)
+#                 profile.user = user
+
+#                 used_ref = profile_form.cleaned_data.get("referral_bonus") or initial_referral
+#                 if used_ref:
+#                     profile.used_referral_code = used_ref
+
+#                     if used_ref == "SEED14F":
+#                         profile.referral_reward += Decimal("50.00")
+#                         logger.info(f"[REFERRAL] Referral bonus applied for {user.email}")
+
+#                 profile.save()
+
+#                 # Send welcome email using HTML template
+#                 try:
+#                     subject = "Welcome to Astrellcapitalinvest"
+#                     html_content = render_to_string("userprofile/register_mail.html", {
+#                         "username": user.username,
+#                         "dashboard_url": "https://www.Astrellcapitalinvest.com/userprofile/dashboard/"
+#                     })
+
+#                     msg = EmailMultiAlternatives(
+#                         subject=subject,
+#                         body=f"Hello {user.username}, your account has been created successfully!",
+#                         from_email=settings.DEFAULT_FROM_EMAIL,
+#                         to=[user.email],
+#                     )
+#                     msg.attach_alternative(html_content, "text/html")
+#                     msg.send(fail_silently=False)
+
+#                     logger.info(f"[EMAIL SENT] Welcome email sent to {user.email}")
+
+#                 except Exception as e:
+#                     logger.error(f"[EMAIL ERROR] Failed sending welcome email to {user.email}: {e}", exc_info=True)
+
+#                 django_login(request, user)
+#                 messages.success(request, "Your Wallet has been created successfully!")
+#                 return redirect("userprofile:dashboard")
+
+#             except Exception as e:
+#                 logger.error(f"[REGISTER ERROR] Registration failed: {e}", exc_info=True)
+#                 messages.error(request, "Something went wrong during registration. Check logs.")
+#         else:
+#             logger.warning(f"[FORM ERROR] User form: {user_form.errors} | Profile form: {profile_form.errors}")
+
+#     else:
+#         user_form = UserRegistrationForm()
+#         profile_form = UserProfileForm(initial={"referral_bonus": initial_referral})
+
+#     return render(request, "userprofile/register.html", {
+#         "user_form": user_form,
+#         "profile_form": profile_form,
+#     })
+
+
+
+
+
+
 
 
 
@@ -375,6 +479,52 @@ def login(request):
     return render(request, 'userprofile/login.html', {'form': form})
 
 
+# logger = logging.getLogger(__name__)
+
+# def reset_password(request):
+#     if request.method == "POST":
+#         form = UserPasswordResetForm(request.POST)
+
+#         if form.is_valid():
+#             email = form.cleaned_data["email"]
+#             try:
+#                 user = User.objects.get(email=email)
+#                 # Generate reset token and email URL
+#                 token = default_token_generator.make_token(user)
+#                 uid = urlsafe_base64_encode(str(user.pk).encode())
+
+#                 reset_url = f"http://{get_current_site(request).domain}/reset/{uid}/{token}/"
+#                 email_message = render_to_string(
+#                     "userprofile/password_reset_email.html",
+#                     {"reset_url": reset_url, "user": user}
+#                 )
+
+#                 send_mail(
+#                     subject="Password Reset Request",
+#                     message=email_message,
+#                     from_email=settings.EMAIL_HOST_USER,
+#                     recipient_list=[email],
+#                     fail_silently=False,
+#                 )
+#                 messages.success(request, "Password reset email has been sent!")
+#                 return redirect("login")
+#             except User.DoesNotExist:
+#                 # Log the error in terminal
+#                 logger.error(f"User with email {email} does not exist.")
+#                 messages.error(request, "Email address not found.")
+#                 return redirect("userprofile:reset-password")
+
+#         else:
+#             # If the form is invalid, log the form errors in terminal
+#             logger.error(f"Form errors: {form.errors}")
+#             messages.error(request, "There was an error with your form. Please try again.")
+#             return render(request, "userprofile/reset_password.html", {"form": form})
+
+#     else:
+#         form = UserPasswordResetForm()
+
+#     return render(request, "userprofile/reset_password.html", {"form": form})
+
 logger = logging.getLogger(__name__)
 
 def reset_password(request):
@@ -383,35 +533,51 @@ def reset_password(request):
 
         if form.is_valid():
             email = form.cleaned_data["email"]
+
             try:
                 user = User.objects.get(email=email)
-                # Generate reset token and email URL
+
+                # Generate token + uid
                 token = default_token_generator.make_token(user)
                 uid = urlsafe_base64_encode(str(user.pk).encode())
 
                 reset_url = f"http://{get_current_site(request).domain}/reset/{uid}/{token}/"
-                email_message = render_to_string(
+
+                # Render HTML email template
+                html_content = render_to_string(
                     "userprofile/password_reset_email.html",
-                    {"reset_url": reset_url, "user": user}
+                    {"reset_url": reset_url, "user": user},
                 )
 
-                send_mail(
-                    subject="Password Reset Request",
-                    message=email_message,
-                    from_email=settings.EMAIL_HOST_USER,
-                    recipient_list=[email],
-                    fail_silently=False,
-                )
+                # ---------------------------------------
+                # ✅ Send email with Resend API
+                # ---------------------------------------
+                try:
+                    send_resend_email(
+                        to=email,
+                        subject="Password Reset Request",
+                        html=html_content,
+                    )
+
+                    logger.info(f"[EMAIL SENT] Password reset email sent to {email} via Resend")
+
+                except Exception as e:
+                    logger.error(
+                        f"[EMAIL ERROR] Failed sending password reset email via Resend to {email}: {e}",
+                        exc_info=True
+                    )
+                    messages.error(request, "Failed to send password reset email. Please try again.")
+                    return redirect("userprofile:reset-password")
+
                 messages.success(request, "Password reset email has been sent!")
                 return redirect("login")
+
             except User.DoesNotExist:
-                # Log the error in terminal
                 logger.error(f"User with email {email} does not exist.")
                 messages.error(request, "Email address not found.")
                 return redirect("userprofile:reset-password")
 
         else:
-            # If the form is invalid, log the form errors in terminal
             logger.error(f"Form errors: {form.errors}")
             messages.error(request, "There was an error with your form. Please try again.")
             return render(request, "userprofile/reset_password.html", {"form": form})
@@ -464,6 +630,58 @@ def recent_withdrawals(request):
 
 
 
+# @login_required
+# def profile_update(request):
+#     user_profile = request.user.userprofile
+
+#     if request.method == 'POST':
+#         form = UserProfileEditForm(request.POST, request.FILES, instance=user_profile)
+
+#         if form.is_valid():
+#             try:
+#                 # Save the updated profile
+#                 form.save()
+
+#                 # Log the successful update
+#                 logger.info(f"User {request.user.username}'s profile was updated successfully.")
+
+#                 # Send an email to the user
+#                 send_mail(
+#                     'Profile Updated Successfully',
+#                     f'Dear {request.user.username},\n\nYour profile has been updated successfully! We will verify your information and notify you once your profile is fully updated.',
+#                     settings.DEFAULT_FROM_EMAIL,
+#                     [request.user.email],
+#                     fail_silently=False,
+#                 )
+
+#                 # Send an email to the admin
+#                 send_mail(
+#                     'User Profile Updated',
+#                     f'User {request.user.username} has updated their profile.',
+#                     settings.DEFAULT_FROM_EMAIL,
+#                     [settings.ADMIN_EMAIL],
+#                     fail_silently=False,
+#                 )
+
+#                 # Redirect to success view
+#                 return redirect('userprofile:profile_update_success')
+
+#             except Exception as e:
+#                 logger.error(f"Error updating profile for {request.user.username}: {str(e)}")
+#                 messages.error(request, "There was an error while updating your profile. Please try again.")
+#                 return redirect('userprofile:profile_update_error')
+
+#         else:
+#             # Form validation failed
+#             logger.error(f"Profile update failed for {request.user.username}. Form errors: {form.errors}")
+#             messages.error(request, "Please correct the errors below.")
+#             return render(request, 'userprofile/dashboard.html', {'profile_edit_form': form})
+
+#     else:
+#         form = UserProfileEditForm(instance=user_profile)
+
+#     return render(request, 'userprofile/dashboard.html', {'profile_edit_form': form})
+
 @login_required
 def profile_update(request):
     user_profile = request.user.userprofile
@@ -476,26 +694,55 @@ def profile_update(request):
                 # Save the updated profile
                 form.save()
 
-                # Log the successful update
                 logger.info(f"User {request.user.username}'s profile was updated successfully.")
 
-                # Send an email to the user
-                send_mail(
-                    'Profile Updated Successfully',
-                    f'Dear {request.user.username},\n\nYour profile has been updated successfully! We will verify your information and notify you once your profile is fully updated.',
-                    settings.DEFAULT_FROM_EMAIL,
-                    [request.user.email],
-                    fail_silently=False,
-                )
+                # ---------------------------------------
+                # ✅ Send email to user using Resend API
+                # ---------------------------------------
+                try:
+                    user_subject = "Profile Updated Successfully"
+                    user_html = (
+                        f"<p>Dear {request.user.username},</p>"
+                        f"<p>Your profile has been updated successfully! "
+                        f"We will verify your information and notify you once your profile is fully updated.</p>"
+                    )
 
-                # Send an email to the admin
-                send_mail(
-                    'User Profile Updated',
-                    f'User {request.user.username} has updated their profile.',
-                    settings.DEFAULT_FROM_EMAIL,
-                    [settings.ADMIN_EMAIL],
-                    fail_silently=False,
-                )
+                    send_resend_email(
+                        to=request.user.email,
+                        subject=user_subject,
+                        html=user_html,
+                    )
+
+                    logger.info(f"[EMAIL SENT] Profile update email sent to {request.user.email} via Resend")
+
+                except Exception as e:
+                    logger.error(
+                        f"[EMAIL ERROR] Failed sending profile update email via Resend to user {request.user.email}: {e}",
+                        exc_info=True
+                    )
+
+                # ---------------------------------------
+                # ✅ Send email to admin using Resend API
+                # ---------------------------------------
+                try:
+                    admin_subject = "User Profile Updated"
+                    admin_html = (
+                        f"<p>User <strong>{request.user.username}</strong> has updated their profile.</p>"
+                    )
+
+                    send_resend_email(
+                        to=settings.ADMIN_EMAIL,
+                        subject=admin_subject,
+                        html=admin_html,
+                    )
+
+                    logger.info(f"[EMAIL SENT] Admin profile update alert sent to {settings.ADMIN_EMAIL} via Resend")
+
+                except Exception as e:
+                    logger.error(
+                        f"[ADMIN EMAIL ERROR] Failed sending admin alert email via Resend: {e}",
+                        exc_info=True
+                    )
 
                 # Redirect to success view
                 return redirect('userprofile:profile_update_success')
@@ -506,7 +753,6 @@ def profile_update(request):
                 return redirect('userprofile:profile_update_error')
 
         else:
-            # Form validation failed
             logger.error(f"Profile update failed for {request.user.username}. Form errors: {form.errors}")
             messages.error(request, "Please correct the errors below.")
             return render(request, 'userprofile/dashboard.html', {'profile_edit_form': form})
@@ -515,6 +761,8 @@ def profile_update(request):
         form = UserProfileEditForm(instance=user_profile)
 
     return render(request, 'userprofile/dashboard.html', {'profile_edit_form': form})
+
+
 
 
 # Success view for profile update
@@ -545,7 +793,3 @@ def transaction_statement(request):
         'user': user,
         'transactions': transactions  # Pass the transactions to the template
     })
-
-
-
-    
