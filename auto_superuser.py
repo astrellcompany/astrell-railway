@@ -2,7 +2,7 @@
 import django
 
 # Tell Django where settings are
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "stablelinkcapital.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "astrellcapitalinvest.settings")
 django.setup()
 
 from django.contrib.auth import get_user_model
