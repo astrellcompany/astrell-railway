@@ -21,18 +21,20 @@ SECRET_KEY = os.getenv(
 # DEBUG
 DEBUG = os.getenv("DEBUG", "False").lower() in ("true", "1", "yes")
 
-# Allowed hosts
+
 ALLOWED_HOSTS = [
     "astrellcapitalinvest-production.up.railway.app",
+    "web-production-ee2d.up.railway.app",   # ADD THIS
     "astrellcapitalinvest.com",
     "www.astrellcapitalinvest.com",
     "localhost",
     "127.0.0.1",
 ]
 
-# CSRF trusted origins
+
 CSRF_TRUSTED_ORIGINS = [
     "https://astrellcapitalinvest-production.up.railway.app",
+    "https://web-production-ee2d.up.railway.app",  # ADD THIS
     "https://astrellcapitalinvest.com",
     "https://www.astrellcapitalinvest.com",
 ]
