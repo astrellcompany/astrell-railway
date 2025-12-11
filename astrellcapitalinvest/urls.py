@@ -5,7 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('astress2011ltd$/', admin.site.urls),
     path('', include('home.urls')),  # Include the seedview app's URLs
     path('userprofile/', include('userprofile.urls')),
     path('investment/', include('investment.urls')),  # Ensure 'investment.urls' is correct

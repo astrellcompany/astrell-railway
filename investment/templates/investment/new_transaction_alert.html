@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>New Transaction Alert - Astrellcapitalinvest</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #ffffff;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: #0d00c2;
+    }
+
+    .wrapper {
+      max-width: 650px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid rgba(11, 26, 233, 0.1);
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(11, 26, 233, 0.1);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #242859 0%, #0b1ae9 50%, #f4f7ff 100%);
+      text-align: center;
+      padding: 35px 0;
+      border-bottom: 4px solid #0b1ae9;
+    }
+
+    .header img {
+      max-width: 170px;
+      filter: brightness(0) invert(1);
+    }
+
+    h2 {
+      color: #0b1ae9;
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .content {
+      padding: 40px;
+      line-height: 1.7;
+    }
+
+    p {
+      font-size: 16px;
+      color: #4a4b64;
+      margin-bottom: 22px;
+    }
+
+    .info-box {
+      background: rgba(11, 26, 233, 0.05);
+      border-left: 4px solid #0b1ae9;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 25px 0;
+      border: 1px solid rgba(11, 26, 233, 0.1);
+    }
+
+    .info-box p {
+      font-size: 16px;
+      margin: 10px 0;
+      color: #1a1a1a;
+    }
+
+    .info-box strong {
+      color: #0b1ae9;
+    }
+
+    .btn-area {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    /* SOLID BUTTON (NO GRADIENT) */
+    .button {
+      display: inline-block;
+      background: #242859; /* Solid first color */
+      color: #ffffff;
+      padding: 15px 40px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 5px 18px rgba(11, 26, 233, 0.2);
+      transition: 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.2);
+      transition: 0.5s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 20px rgba(11, 26, 233, 0.3);
+    }
+
+    .button:hover::before {
+      left: 100%;
+    }
+
+    .footer {
+      background: rgba(11, 26, 233, 0.05);
+      padding: 25px;
+      text-align: center;
+      color: #4a4b64;
+      font-size: 14px;
+      border-top: 1px solid rgba(11, 26, 233, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <div class="header">
+      <img src="{% static 'assets/images/logo4.png' %}" alt="Astrellcapitalinvest Logo">
+    </div>
+
+    <div class="content">
+
+      <h2>New Transaction Alert 🔔</h2>
+
+      <p>Hello <strong>{{ username }}</strong>,</p>
+
+      <p>
+        A new <strong style="color:#0b1ae9;">{{ transaction_type }}</strong> has been processed 
+        on your Astrellcapitalinvest account. See details below:
+      </p>
+
+      <div class="info-box">
+        <p><strong>Transaction Details</strong></p>
+        <p>💳 Type: <strong>{{ transaction_type }}</strong></p>
+        <p>💰 Amount: <strong>${{ amount }}</strong></p>
+        <p>📝 Transaction ID: <strong>{{ transaction_id }}</strong></p>
+        <p>📅 Date: <strong>{{ transaction_date }}</strong></p>
+
+        {% if status %}
+        <p>📌 Status: <strong>{{ status }}</strong></p>
+        {% endif %}
+      </div>
+
+      <div class="btn-area">
+        <a href="https://www.astrellcapitalinvest.com/userprofile/dashboard/" class="button">
+          View Your Dashboard
+        </a>
+      </div>
+
+      <p>If you did not authorize this transaction, contact support immediately.</p>
+
+    </div>
+
+    <div class="footer">
+      <p>&copy; Astrellcapitalinvest. All rights reserved.</p>
+      <p>This is an automated message, please do not reply.</p>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

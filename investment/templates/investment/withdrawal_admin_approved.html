@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Withdrawal Approved - Admin Notification</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #ffffff;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: #0d00c2;
+    }
+
+    .wrapper {
+      max-width: 650px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid rgba(11, 26, 233, 0.1);
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(11, 26, 233, 0.1);
+    }
+
+    .header {
+      background: linear-gradient(135deg, #242859 0%, #0b1ae9 50%, #f4f7ff 100%);
+      text-align: center;
+      padding: 35px 0;
+      border-bottom: 4px solid #0b1ae9;
+    }
+
+    .header img {
+      max-width: 170px;
+      filter: brightness(0) invert(1);
+    }
+
+    .content {
+      padding: 40px;
+      line-height: 1.7;
+    }
+
+    h2 {
+      color: #0b1ae9;
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 25px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #4a4b64;
+      margin-bottom: 18px;
+    }
+
+    .info-box {
+      background: rgba(11, 26, 233, 0.05);
+      border-left: 4px solid #0b1ae9;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 25px 0;
+      border: 1px solid rgba(11, 26, 233, 0.1);
+    }
+
+    .info-box p {
+      font-size: 16px;
+      margin: 10px 0;
+      color: #1a1a1a;
+    }
+
+    .info-box strong {
+      color: #0b1ae9;
+    }
+
+    .footer {
+      background: rgba(11, 26, 233, 0.05);
+      padding: 25px;
+      text-align: center;
+      font-size: 14px;
+      color: #4a4b64;
+      border-top: 1px solid rgba(11, 26, 233, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <div class="header">
+      <img src="{% static 'assets/images/logo4.png' %}" alt="Astrellcapitalinvest Logo">
+    </div>
+
+    <div class="content">
+
+      <h2>Withdrawal Approved – Admin Alert</h2>
+
+      <p>
+        A user's withdrawal request has been <strong style="color:#0b1ae9;">successfully approved</strong>.
+        Below are the details:
+      </p>
+
+      <div class="info-box">
+        <p><strong>User:</strong> {{ username }}</p>
+        <p><strong>Amount:</strong> ${{ amount }}</p>
+        <p><strong>Transaction ID:</strong> {{ transaction_id }}</p>
+        <p><strong>Status:</strong> {{ status }}</p>
+        <p><strong>Date Approved:</strong> {{ approval_date }}</p>
+      </div>
+
+      <p>
+        This automated notification helps you track all withdrawals processed 
+        through the Astrellcapitalinvest system.
+      </p>
+
+    </div>
+
+    <div class="footer">
+      <p>&copy; Astrellcapitalinvest. All rights reserved.</p>
+      <p>This is an automated message, please do not reply.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,10 +1,13 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from utils.email_utils import send_resend_email
+
+
 
 def home_view(request):
     return render(request, 'home/index.html')
 
 
-from utils.email_utils import send_resend_email
 
 def send_test(request):
     send_resend_email(
