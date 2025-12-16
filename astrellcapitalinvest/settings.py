@@ -25,8 +25,8 @@ DEBUG = os.getenv("DEBUG", "False").lower() in ("true", "1", "yes")
 ALLOWED_HOSTS = [
     "astrellcapitalinvest-production.up.railway.app",
     "web-production-ee2d.up.railway.app",   # ADD THIS
-    "astrellcapitalinvest.com",
-    "www.astrellcapitalinvest.com",
+    "astrellcompany.com",
+    "www.astrellcompany.com",
     "localhost",
     "127.0.0.1",
 ]
@@ -134,7 +134,6 @@ USE_TZ = True
 # ---------------------------------------
 # STATIC FILES (RAILWAY + WHITENOISE)
 # ---------------------------------------
-
 STATIC_URL = "/static/"
 
 # Folder where Railway will collect static files
@@ -147,6 +146,13 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+# =========================
+# MEDIA FILES (uploads)
+# =========================
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
 
 
 
@@ -178,9 +184,9 @@ else:
 RESEND_API_KEY = os.getenv("RESEND_API_KEY")
 
 # Default sender email (Resend requires domain verification)
-DEFAULT_FROM_EMAIL = "support@astrellcapitalinvest.com"
+DEFAULT_FROM_EMAIL = "support@astrellcompany.com"
 DEFAULT_FROM_EMAIL = DEFAULT_FROM_EMAIL
-ADMIN_EMAIL = os.getenv("ADMIN_EMAIL", "support@astrellcapitalinvest.com")
+ADMIN_EMAIL = os.getenv("ADMIN_EMAIL", "support@astrellcompany.com")
 
 
 # ---------------------------------------
