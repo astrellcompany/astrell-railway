@@ -20,18 +20,19 @@ SECRET_KEY = os.getenv(
 
 # DEBUG
 DEBUG = os.getenv("DEBUG", "False").lower() in ("true", "1", "yes")
-# ALLOWED_HOSTS = [
-#     "astrellcapitalinvest-production.up.railway.app",
-#     # "web-production-ee2d.up.railway.app",
-#     "web-production-8a381.up.railway.app",  # NEW DOMAIN ADDED
-#     "astrellcompany.com",
-#     "www.astrellcompany.com",
-#     "localhost",
-#     "127.0.0.1",
-# ]
+
+ALLOWED_HOSTS = [
+    "astrellcapitalinvest-production.up.railway.app",
+    "web-production-ee2d.up.railway.app",
+    "web-production-8a381.up.railway.app",  # NEW DOMAIN ADDED
+    "astrellcompany.com",
+    "www.astrellcompany.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "localhost").split(",")
+# ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "localhost").split(",")
 
 
 
